@@ -19,27 +19,31 @@ let colorBackground5 = btncolor5.style.backgroundColor;
 let btncolor6 = document.querySelector('#btn-6');
 let colorBackground6 = btncolor6.style.backgroundColor;
 
+let cajaAPintar = document.querySelector('#caja');
+
 //EVENTOS
 btncolor1.addEventListener('click', function() {
-    document.body.style.backgroundColor = colorBackground1;
+
+    cajaAPintar.style.backgroundColor = colorBackground1;
+
 });
 
 btncolor2.addEventListener('click', function() {
-    document.body.style.backgroundColor = colorBackground2;
+    cajaAPintar.style.backgroundColor = colorBackground2;
 });
 
 btncolor3.addEventListener('click', function() {
-    document.body.style.backgroundColor = colorBackground3;
+    cajaAPintar.style.backgroundColor = colorBackground3;
 });
 
 btncolor4.addEventListener('click', function() {
-    document.body.style.backgroundColor = colorBackground4;
+    cajaAPintar.style.backgroundColor = colorBackground4;
 });
 
 btncolor5.addEventListener('click', function() {
-    document.body.style.backgroundColor = colorBackground5;
+    cajaAPintar.style.backgroundColor = colorBackground5;
 });
 
 btncolor6.addEventListener('click', function() {
-    document.body.style.backgroundColor = colorBackground6;
+    cajaAPintar.style.backgroundColor = colorBackground6;
 });

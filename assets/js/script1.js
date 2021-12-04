@@ -17,11 +17,10 @@ let errorDeMensaje = document.querySelector('.errorMensaje');
 formulario.addEventListener('submit', function(ev) {
     ev.preventDefault();
 
-    //Valores
+    //Valores input
     let valNombre = nombre.value;
     let valAsunto = asunto.value;
     let valMensaje = mensaje.value;
-
 
     //Evaluar input Nombre
     if (!isValid(valNombre)) {
@@ -29,7 +28,6 @@ formulario.addEventListener('submit', function(ev) {
     } else {
         errorDeNombre.innerHTML = '';
     }
-
 
     //Evaluar input Asunto
     if (!isValid(valAsunto)) {
@@ -44,13 +42,6 @@ formulario.addEventListener('submit', function(ev) {
     } else {
         errorDeMensaje.innerHTML = '';
     }
-
-    // if (valNombre != "" && valAsunto != "" && valMensaje != "") {
-    //     resultado.innerHTML = 'Mensaje enviado con éxito';
-    // } else {
-    //     resultado.innerHTML = '';
-    // }
-
 
     if (isValid(valNombre) && isValid(valAsunto) && isValid(valMensaje)) {
         resultado.innerHTML = 'Mensaje enviado con éxito';
