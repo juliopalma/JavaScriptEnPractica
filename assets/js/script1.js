@@ -43,12 +43,12 @@ formulario.addEventListener('submit', function(ev) {
         errorDeMensaje.innerHTML = '';
     }
 
+    //validacion para todos los campos de entrada (nombre, asunto y mensaje)
     if (isValid(valNombre) && isValid(valAsunto) && isValid(valMensaje)) {
         resultado.innerHTML = 'Mensaje enviado con éxito';
     } else {
         resultado.innerHTML = '';
     }
-
 
 });
 

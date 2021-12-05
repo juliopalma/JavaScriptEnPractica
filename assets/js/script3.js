@@ -14,19 +14,21 @@ let valor2 = inputNum2.value;
 let suma = document.querySelector('#btn-sumar');
 let resta = document.querySelector('#btn-restar');
 
-
 /*+++++++++++++++++++++++++++++++++++EVENTOS**************************************************************/
 
 //Sumar
 suma.addEventListener('click', function() {
     //Obtengo su valor
-    let valor1 = inputNum1.value;
-    let valor2 = inputNum2.value;
+    let valor1suma = inputNum1.value;
+    let valor2suma = inputNum2.value;
+    let result = parseInt(valor1suma) + parseInt(valor2suma);
 
-    const result = parseInt(valor1) + parseInt(valor2);
+    if (isValid(valor1suma) && isValid(valor2suma)) {
 
-    resOperacion.innerHTML = `La suma de los números ingresados es: ` + result;
-
+        resOperacion.innerHTML = `La suma de los números ingresados es: ${result}`;
+    } else {
+        alert("Solo son permitido números, por favor revisa la informacion entregada");
+    }
 });
 
 //Restar
@@ -34,13 +36,21 @@ resta.addEventListener('click', function() {
     //Obtengo su valor
     let valor1 = inputNum1.value;
     let valor2 = inputNum2.value;
+    let result = parseInt(valor1) - parseInt(valor2);
 
-    const result = parseInt(valor1) - parseInt(valor2);
-
-    if (result < 0) {
-        resOperacion.innerHTML = "El resultado es: 0";
+    if (isValid(valor1) && isValid(valor2)) {
+        if (result < 0) {
+            resOperacion.innerHTML = " es 0";
+        } else {
+            resOperacion.innerHTML = `La resta de los números ingresados es: ${result}`;
+        }
     } else {
-        resOperacion.innerHTML = `La resta de los números ingresados es: ` + result;
+        alert("Solo son permitido números, por favor revisa la informacion entregada");
     }
-
 });
+
+
+//Funcion para validar campos de entrada
+function isValid(word) {
+    return word.match(/^[0-9 ]+$/) != null;
+}
